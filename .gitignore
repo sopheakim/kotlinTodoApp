@@ -1,0 +1,44 @@
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file
+local.properties
+
+# Android Studio generated files
+*.iml
+.idea/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Android generated files
+bin/
+gen/
+out/
+
+# Dependency directories
+/captures
+.externalNativeBuild
+.cxx
+
+# macOS system files
+.DS_Store
+
+# Backup files
+*.bak
+*.swp
+
+# Kotlin build artifacts
+*.jar
+*.war
+*.ear
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# Android Profiling
+*.hprof
