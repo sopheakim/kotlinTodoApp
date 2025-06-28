@@ -1,0 +1,37 @@
+# Android Studio
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Kotlin
+*.class
+*.log
+
+# Build files
+*.apk
+*.aar
+/bin/
+/out/
+
+# Dependency directories
+/node_modules/
+
+# Gradle
+.gradle/
+build/
+
+# Misc
+.env
+local.properties
+
+# Logging
+*.log
+
+# Test reports
+test-results/
