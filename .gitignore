@@ -1,0 +1,32 @@
+# Android Studio
+*.iml
+.gradle/
+build/
+.idea/
+local.properties
+
+# Gradle files
+*.gradle
+**/build/
+
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Virtual machine crash logs
+hs_err_pid*
+
+# Mac system files
+.DS_Store
+
+# Sensitive or local configuration
+*.env
+
+# External libraries
+app/libs/
+
+# Test results
+test-results/
+reports/
