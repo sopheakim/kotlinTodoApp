@@ -1,8 +1,9 @@
 package com.todoapp.model
 
-import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
+import java.time.LocalDateTime
 
 class TodoTest {
 
@@ -14,6 +15,7 @@ class TodoTest {
         assertEquals("Buy groceries", todo.title)
         assertFalse(todo.isCompleted)
         assertNull(todo.description)
+        assertNotNull(todo.createdAt)
     }
 
     @Test
@@ -63,16 +65,19 @@ class TodoTest {
     @Test
     fun `reconstruct todo item`() {
         val id = "test-id-123"
+        val createdAt = LocalDateTime.now()
         val todo = Todo.reconstruct(
             id = id,
             title = "Existing Task", 
             description = "Some description",
-            isCompleted = true
+            isCompleted = true,
+            createdAt = createdAt
         )
         
         assertEquals(id, todo.id)
         assertEquals("Existing Task", todo.title)
         assertEquals("Some description", todo.description)
         assertTrue(todo.isCompleted)
+        assertEquals(createdAt, todo.createdAt)
     }
 }
