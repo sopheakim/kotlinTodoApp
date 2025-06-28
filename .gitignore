@@ -1,0 +1,34 @@
+# Android Studio
+*.iml
+.gradle
+/local.properties
+/.idea/
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Kotlin and Java
+*.class
+*.log
+*.ctxt
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Dependency directories
+node_modules/
+kotlin-js-store/
+
+# Gradle
+.gradle/
+build/
+
+# Miscellaneous
+.env
+__pycache__/
