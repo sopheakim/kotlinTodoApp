@@ -6,62 +6,43 @@ import org.junit.Test
 class TodoValidationTest {
     @Test
     fun `test valid title returns true`() {
-        // Arrange
-        val validTitle = "Buy groceries"
-        
-        // Act
-        val result = TodoValidation.isValidTitle(validTitle)
-        
-        // Assert
-        assertTrue("Valid title should return true", result)
+        val validTitles = listOf(
+            "Buy groceries", 
+            "A", 
+            "A".repeat(100)
+        )
+        validTitles.forEach { title ->
+            assertTrue("Title '$title' should be valid", TodoValidation.isValidTitle(title))
+        }
     }
 
     @Test
-    fun `test empty title returns false`() {
-        // Arrange
-        val emptyTitle = ""
-        
-        // Act
-        val result = TodoValidation.isValidTitle(emptyTitle)
-        
-        // Assert
-        assertFalse("Empty title should return false", result)
-    }
-
-    @Test
-    fun `test null title returns false`() {
-        // Arrange
-        val nullTitle: String? = null
-        
-        // Act
-        val result = TodoValidation.isValidTitle(nullTitle)
-        
-        // Assert
-        assertFalse("Null title should return false", result)
-    }
-
-    @Test
-    fun `test whitespace-only title returns false`() {
-        // Arrange
-        val whitespaceTitle = "   "
-        
-        // Act
-        val result = TodoValidation.isValidTitle(whitespaceTitle)
-        
-        // Assert
-        assertFalse("Whitespace-only title should return false", result)
+    fun `test invalid titles return false`() {
+        val invalidTitles = listOf(
+            "", 
+            "   ", 
+            null, 
+            "A".repeat(101)
+        )
+        invalidTitles.forEach { title ->
+            assertFalse("Title '${title ?: "null"}' should be invalid", TodoValidation.isValidTitle(title))
+        }
     }
 
     @Test(expected = IllegalArgumentException::class)
     fun `test validateTitle throws exception for invalid title`() {
-        // Act
         TodoValidation.validateTitle("")
     }
 
     @Test
-    fun `test validateTitle does not throw for valid title`() {
-        // Act
-        TodoValidation.validateTitle("Valid Title")
-        // Assert (no exception thrown)
+    fun `test validateTitle does not throw for valid titles`() {
+        val validTitles = listOf(
+            "Valid Title", 
+            "A", 
+            "A".repeat(100)
+        )
+        validTitles.forEach { 
+            TodoValidation.validateTitle(it) // Should not throw
+        }
     }
 }
