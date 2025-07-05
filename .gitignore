@@ -4,31 +4,15 @@
 .gradle/
 build/
 captures/
+local.properties
+.externalNativeBuild
+.cxx
 
-# Kotlin
+# Kotlin and Java
 *.class
 *.kotlin_module
-
-# Gradle
-local.properties
-/out/
-
-# Logs
 *.log
-
-# Virtual Machine
-.DS_Store
-
-# Dependency directories
-/node_modules/
-
-# Compiled class files
-*.class
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files
+*.ctxt
 *.jar
 *.war
 *.nar
@@ -37,5 +21,16 @@ local.properties
 *.tar.gz
 *.rar
 
-# virtual machine crash logs
+# Virtual Machine
+.DS_Store
+.mtj.tmp/
 hs_err_pid*
+
+# Dependency directories
+/node_modules/
+kotlin-js-store/
+
+# Other
+.env
+__pycache__/
+/out/
