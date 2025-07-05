@@ -1,8 +1,5 @@
 package com.todoapp.validation
 
-/**
- * Provides validation methods for Todo items
- */
 object TodoValidation {
     /**
      * Validates the title of a todo item
@@ -12,7 +9,8 @@ object TodoValidation {
      */
     fun isValidTitle(title: String?): Boolean {
         // Check if title is null or empty after trimming whitespace
-        return !title.isNullOrBlank()
+        // Add length constraint (1-100 characters)
+        return !title.isNullOrBlank() && (title?.trim()?.length ?: 0) in 1..100
     }
 
     /**
@@ -22,6 +20,6 @@ object TodoValidation {
      * @throws IllegalArgumentException if title is invalid
      */
     fun validateTitle(title: String?) {
-        require(isValidTitle(title)) { "Todo item title cannot be empty" }
+        require(isValidTitle(title)) { "Todo item title must be 1-100 characters long" }
     }
 }
